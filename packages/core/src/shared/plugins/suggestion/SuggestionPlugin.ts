@@ -298,6 +298,12 @@ export const setupSuggestionsMenu = <
 
           // Shows the menu if the default trigger character was pressed and the menu isn't active.
           if (event.key === defaultTriggerCharacter && !menuIsActive) {
+            /*
+            //只有空内容的节点可以弹出
+            if(view.state.selection.$from.node().textContent!==''){
+              return false;
+            }
+            */
             view.dispatch(
               view.state.tr
                 .insertText(defaultTriggerCharacter)
